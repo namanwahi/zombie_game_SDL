@@ -12,9 +12,7 @@ Minimum CMake version required: 3.5
 
 How to build: 
 -Install the relevant SDL2 packages (If you are using APT run ```apt-get install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev```)       
-
 -Run ```cmake .```  in the root of the project  
-
 -In the root directoryto generate the appropriate makefile. Then run ```make``` to create the executable
 
 Tested on Ubuntu 16.04
