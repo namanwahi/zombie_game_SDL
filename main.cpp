@@ -327,8 +327,8 @@ void close() {
 }
 
 void randomSpawnEnemy() {
-  int chance_inverse = 1000;
-  int chance_super_enemy = 3;
+  int chance_inverse = 500;
+  int chance_super_enemy = 5;
   int random_num = random(chance_inverse);
   int random_num_for_super = random(chance_super_enemy);
   if (random_num == 0) {
