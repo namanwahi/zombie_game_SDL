@@ -13,4 +13,6 @@ Tested on Ubuntu 16.04
 
 I have included the CMakeLists.txt file to build the project.
 
-Screenshots:
+Screenshots (can be found in screenshots folder):
+
+![Alt text](/screenshots/screenshot1.png?raw=true)
