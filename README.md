@@ -16,3 +16,6 @@ I have included the CMakeLists.txt file to build the project.
 Screenshots (can be found in screenshots folder):
 
 ![Alt text](/screenshots/screenshot1.png?raw=true)
+![Alt text](/screenshots/screenshot2.png?raw=true)
+![Alt text](/screenshots/screenshot3.png?raw=true)
+![Alt text](/screenshots/screenshot4.png?raw=true)
