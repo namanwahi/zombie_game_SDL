@@ -1,5 +1,5 @@
 # zombie_game_SDL
-C++ implementation of a zombie game using SDL2
+Zombie game written in C++
 
 C++ version: C++11
 
