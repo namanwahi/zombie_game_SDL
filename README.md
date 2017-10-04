@@ -22,7 +22,7 @@ W,A,S,D - move
 Hold Space - aim  
 Release Space - shoot  
 
-Screenshots (can be found in screenshots folder):
+Screenshots (can be found in screenshots directory):
 
 ![Alt text](/screenshots/screenshot1.png?raw=true)
 ![Alt text](/screenshots/screenshot2.png?raw=true)
