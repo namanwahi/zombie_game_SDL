@@ -15,7 +15,7 @@ void handleShot(const Player& shooter, Enemy& enemy) {
       
       //if the shot hit the Enemy kill the Enemy
       if (enemy.intersectsLine(last_shot) && findQuadrant(shooter.getCentre(), enemy.getCentre())
-					== findQuadrant(last_shot.angle_d)) {
+          == findQuadrant(last_shot.angle_d)) {
         enemy.reduceHealth();
       }
     }

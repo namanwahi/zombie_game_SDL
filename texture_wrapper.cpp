@@ -10,24 +10,24 @@ TextureWrapper::TextureWrapper() : width(0), height(0), pTexture(nullptr, &SDL_D
 
 bool TextureWrapper::loadFromFile(std::string path, SDL_Renderer* renderer, int width) {
 
-	//Load image at specified path
-	std::unique_ptr<SDL_Surface, decltype(&SDL_FreeSurface)> loadedSurface(IMG_Load(path.c_str()), &SDL_FreeSurface);
-	std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)> newTexture(SDL_CreateTextureFromSurface(renderer, loadedSurface.get()), &SDL_DestroyTexture);
+  //Load image at specified path
+  std::unique_ptr<SDL_Surface, decltype(&SDL_FreeSurface)> loadedSurface(IMG_Load(path.c_str()), &SDL_FreeSurface);
+  std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)> newTexture(SDL_CreateTextureFromSurface(renderer, loadedSurface.get()), &SDL_DestroyTexture);
 
-	if (!loadedSurface) {
-		std::cerr << IMG_GetError();
+  if (!loadedSurface) {
+    std::cerr << IMG_GetError();
   } else {
     //Color key image, remove background white colour
     SDL_SetColorKey(loadedSurface.get(), SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0xFF, 0xFF, 0xFF));
     if (!newTexture) {
-			std::cerr << SDL_GetError();
+      std::cerr << SDL_GetError();
     } else if (width == 0){
       //Get image dimensions
       this->width = loadedSurface->w;
       this->height = loadedSurface->h;
     } else {
-			this->width = width;
-			this->height = width * ((float) loadedSurface->h/ (float) loadedSurface->w);
+      this->width = width;
+      this->height = width * ((float) loadedSurface->h/ (float) loadedSurface->w);
     }
   }
   //Return success
@@ -36,22 +36,22 @@ bool TextureWrapper::loadFromFile(std::string path, SDL_Renderer* renderer, int 
 }
 
 bool TextureWrapper::loadTTFTexture(std::string text, TTF_Font* font, SDL_Color color, SDL_Renderer* renderer) {
-	std::unique_ptr<SDL_Surface, decltype(&SDL_FreeSurface)> loadedSurface(TTF_RenderText_Solid(font, text.c_str(), color) ,SDL_FreeSurface);
-	std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)> newTexture(SDL_CreateTextureFromSurface(renderer, loadedSurface.get()), SDL_DestroyTexture);
-	if (!loadedSurface) {
-		std::cerr << TTF_GetError();
-	} else {
-		if (!newTexture) {
-			std::cerr << SDL_GetError();
-		} else {
-			this->width = loadedSurface->w;
-			this->height = loadedSurface->h;
-		}
-	}
+  std::unique_ptr<SDL_Surface, decltype(&SDL_FreeSurface)> loadedSurface(TTF_RenderText_Solid(font, text.c_str(), color) ,SDL_FreeSurface);
+  std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)> newTexture(SDL_CreateTextureFromSurface(renderer, loadedSurface.get()), SDL_DestroyTexture);
+  if (!loadedSurface) {
+    std::cerr << TTF_GetError();
+  } else {
+    if (!newTexture) {
+      std::cerr << SDL_GetError();
+    } else {
+      this->width = loadedSurface->w;
+      this->height = loadedSurface->h;
+    }
+  }
 
-	//Return success
-	pTexture = std::move(newTexture);
-	return pTexture != nullptr;
+  //Return success
+  pTexture = std::move(newTexture);
+  return pTexture != nullptr;
 }
 
 void TextureWrapper::render(int x, int y, SDL_Renderer* renderer, SDL_Rect * clip, double angle_velocity_d, SDL_Point * center, SDL_RendererFlip flip) {
@@ -60,7 +60,7 @@ void TextureWrapper::render(int x, int y, SDL_Renderer* renderer, SDL_Rect * cli
     x,
     y,
     width,
-		height
+    height
   };
 
   //Set clip rendering dimensions

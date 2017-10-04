@@ -13,14 +13,14 @@ class Enemy {
 public:
   static constexpr int ENEMY_WIDTH = 40;
   static constexpr int ENEMY_HEIGHT = 40;
-	static constexpr double SPEED = 0.25;
+  static constexpr double SPEED = 0.25;
 
 
   Enemy(double x, double y, int lp = 1, bool is = false) : x_pos(x), y_pos(y), has_been_hit(false), is_dead(false), angle_d(0), life_points(lp), is_super(is) { }
 
   virtual ~Enemy() {};
 
-	//move towards the player without colliding with other enemies
+  //move towards the player without colliding with other enemies
   virtual void move(const Player &target, const std::list<std::unique_ptr<Enemy>> &enemies);
 
   void render(SDL_Renderer* renderer, TextureWrapper& texture) const;
@@ -32,23 +32,23 @@ public:
     return ret;
   }
 
-	double getAngleDegrees() const {
-		return angle_d;
-	}
-	
+  double getAngleDegrees() const {
+    return angle_d;
+  }
+  
   void reduceHealth() {
-		life_points--;
-		if (life_points <= 0) {
-		  is_dead = true;	
-		}
+    life_points--;
+    if (life_points <= 0) {
+      is_dead = true; 
+    }
   }
 
   bool isDead() const {
     return is_dead;
   }
 
-	//TODO:refactor to enable polymorphic behaviour
-	const bool is_super;
+  //TODO:refactor to enable polymorphic behaviour
+  const bool is_super;
 
 protected:
 
@@ -57,17 +57,17 @@ protected:
 private:
 
 
-	int life_points;
-	
-	bool willCollideWithEnemies(const std::list<std::unique_ptr<Enemy>> &enemies);
-	
-	//angle in degrees
-	double angle_d;
-	
+  int life_points;
+  
+  bool willCollideWithEnemies(const std::list<std::unique_ptr<Enemy>> &enemies);
+  
+  //angle in degrees
+  double angle_d;
+  
   double x_pos;
   double y_pos;
 
-	bool has_been_hit;
+  bool has_been_hit;
 
   //boolean to determine if it is dead
   bool is_dead;
