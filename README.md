@@ -14,8 +14,8 @@ Tested on Ubuntu 16.04
 I have included the CMakeLists.txt file to build the project.
 
 Controls:
-W,A,S,D - move
-Hold Space - aim
+W,A,S,D - move |
+Hold Space - aim |
 Release Space - shoot
 
 Screenshots (can be found in screenshots folder):
